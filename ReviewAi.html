@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReviewPulse AI - Command Center</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Google Fonts for premium typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+</style>
+</head>
+<body class="bg-slate-50/50 text-slate-800 antialiased">
+<div class="flex min-h-screen">
+  
+  <!-- Sidebar -->
+  <aside class="w-64 bg-slate-950 text-slate-200 flex flex-col border-r border-slate-800/40">
+    <div class="p-6 border-b border-slate-900">
+      <div class="flex items-center gap-2.5">
+        <div class="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-600/30">R</div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight text-white leading-tight">ReviewPulse AI</h1>
+          <p class="text-indigo-400 text-xs font-medium tracking-wide uppercase">Intelligence Hub</p>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="flex-1 p-4 space-y-1.5 mt-4">
+      <a href="#" class="flex items-center gap-3 bg-indigo-600/10 text-indigo-400 font-semibold rounded-xl px-4 py-3 transition-all duration-200">
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 text-slate-400 hover:bg-slate-900 hover:text-slate-200 font-medium rounded-xl px-4 py-3 transition-all duration-200">
+        <span>Reviews</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 text-slate-400 hover:bg-slate-900 hover:text-slate-200 font-medium rounded-xl px-4 py-3 transition-all duration-200">
+        <span>AI Insights</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 text-slate-400 hover:bg-slate-900 hover:text-slate-200 font-medium rounded-xl px-4 py-3 transition-all duration-200">
+        <span>Platforms</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 text-slate-400 hover:bg-slate-900 hover:text-slate-200 font-medium rounded-xl px-4 py-3 transition-all duration-200">
+        <span>Reports</span>
+      </a>
+    </nav>
+
+    <div class="p-4 border-t border-slate-900 m-4 bg-slate-900/50 rounded-xl">
+      <div class="text-xs text-slate-400 font-medium">Subscription Plan</div>
+      <div class="text-sm font-semibold text-white mt-0.5">Enterprise Core</div>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 p-8 lg:p-10 max-w-[1600px] mx-auto w-full overflow-x-hidden">
+    
+    <!-- Top Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
+      <div>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-900">Ecommerce Review Command Center</h2>
+        <p class="text-slate-500 mt-1 font-medium">Cross-platform synthesis across Amazon, Flipkart, Myntra, Shopify, and Google.</p>
+      </div>
+      <button class="bg-indigo-600 hover:bg-indigo-700 active:transform active:scale-95 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-indigo-600/20 transition-all duration-150 inline-flex items-center gap-2">
+        <span>Export Report</span>
+      </button>
+    </div>
+
+    <!-- Quick Stats Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mb-8">
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Total Reviews</div>
+        <div class="text-2xl font-bold text-slate-900 mt-2">12,487</div>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Avg Rating</div>
+        <div class="text-2xl font-bold text-slate-900 mt-2 flex items-baseline gap-1">4.3<span class="text-amber-500 text-lg">★</span></div>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Positive</div>
+        <div class="text-2xl font-bold text-emerald-600 mt-2">78%</div>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Negative</div>
+        <div class="text-2xl font-bold text-rose-600 mt-2">22%</div>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow ring-2 ring-orange-500/10">
+        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Urgent Alerts</div>
+        <div class="text-2xl font-bold text-orange-600 mt-2">47</div>
+      </div>
+      <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Active Channels</div>
+        <div class="text-2xl font-bold text-slate-900 mt-2">5</div>
+      </div>
+    </div>
+
+    <!-- Charts and Real-time AI Alerts -->
+    <div class="grid lg:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm lg:col-span-2">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="font-bold text-slate-900 text-lg">Sentiment Trend Over Time</h3>
+          <span class="text-xs font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full">Weekly Interval</span>
+        </div>
+        <div class="relative h-[280px]">
+          <canvas id="trend"></canvas>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm">
+        <h3 class="font-bold text-slate-900 text-lg mb-4">Critical AI Alerts</h3>
+        <div class="space-y-3">
+          <div class="bg-rose-50/70 border border-rose-100 p-4 rounded-xl flex items-start gap-3">
+            <div class="h-2 w-2 rounded-full bg-rose-500 mt-2 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-rose-900 text-sm">Packaging complaints increased</p>
+              <p class="text-rose-700/80 text-xs font-medium mt-0.5">+38% spiking on Amazon last 48h</p>
+            </div>
+          </div>
+          <div class="bg-amber-50/70 border border-amber-100 p-4 rounded-xl flex items-start gap-3">
+            <div class="h-2 w-2 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-amber-900 text-sm">Delivery delays trending</p>
+              <p class="text-amber-700/80 text-xs font-medium mt-0.5">+25% increase over historical baseline</p>
+            </div>
+          </div>
+          <div class="bg-yellow-50/70 border border-yellow-200 p-4 rounded-xl flex items-start gap-3">
+            <div class="h-2 w-2 rounded-full bg-yellow-500 mt-2 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-yellow-900 text-sm">Product XYZ quality flag</p>
+              <p class="text-yellow-700/80 text-xs font-medium mt-0.5">Stitching defect keywords observed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Topics & Recommended Actions Matrix -->
+    <div class="grid lg:grid-cols-2 gap-6 mb-8">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col justify-between">
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg mb-4">AI Topic Clustering</h3>
+          <div class="space-y-3.5">
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-700">Product Quality</span>
+                <span class="text-slate-500 font-semibold">521 mentions</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-indigo-600 h-full rounded-full" style="width: 85%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-700">Delivery Issues</span>
+                <span class="text-slate-500 font-semibold">423 mentions</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-indigo-500/80 h-full rounded-full" style="width: 70%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-700">Wrong Size</span>
+                <span class="text-slate-500 font-semibold">247 mentions</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-indigo-400 h-full rounded-full" style="width: 45%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-700">Packaging Deficiencies</span>
+                <span class="text-slate-500 font-semibold">178 mentions</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-indigo-300 h-full rounded-full" style="width: 32%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-700">Refund Processing</span>
+                <span class="text-slate-500 font-semibold">67 mentions</span>
+              </div>
+              <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden"><div class="bg-indigo-200 h-full rounded-full" style="width: 15%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col justify-between">
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg mb-4">Prescriptive AI Recommendation</h3>
+          <div class="bg-slate-50 border border-slate-200/60 p-5 rounded-xl h-full">
+            <div class="inline-flex items-center gap-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span></span>
+              Root Cause Isolated
+            </div>
+            <p class="font-bold text-slate-900 text-base">Structural Damage via Transit</p>
+            <p class="mt-2 text-slate-600 text-sm leading-relaxed">Cross-platform classification matrix states major structural issues occur post-fulfillment. Items are structurally sound but compromised dynamically on delivery routes.</p>
+            
+            <div class="mt-4 pt-4 border-t border-slate-200/60">
+              <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Action Items</span>
+              <p class="mt-1 text-slate-800 font-medium text-sm">Upgrade corrugated packaging liners and invoke quality review audit with regional fulfillment vendors.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 bg-emerald-50 border border-emerald-100 text-emerald-800 p-3.5 rounded-xl text-sm font-semibold flex justify-between items-center">
+          <span>Projected Impact (Fulfillment Complaints)</span>
+          <span class="text-emerald-600 font-bold bg-white px-2.5 py-1 rounded-lg border border-emerald-100 shadow-sm">-12% to -18%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Table Showcase -->
+    <div class="bg-white rounded-2xl border border-slate-200/60 shadow-sm overflow-hidden">
+      <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+        <h3 class="font-bold text-slate-900 text-lg">Real-time Stream Matrix</h3>
+        <span class="text-xs text-slate-400 font-medium">Auto-refreshing live logs</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-50/70 border-b border-slate-100 text-slate-400 text-xs uppercase tracking-wider font-semibold">
+              <th class="py-3 px-6">Verbatim Feedback</th>
+              <th class="py-3 px-6">Source Platform</th>
+              <th class="py-3 px-6 text-center">Score Metric</th>
+              <th class="py-3 px-6 text-right">Extracted Sentiment</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-sm font-medium text-slate-700">
+            <tr class="hover:bg-slate-50/40 transition-colors">
+              <td class="py-4 px-6 font-normal max-w-sm truncate text-slate-900">Product arrived completely shattered and unusable.</td>
+              <td class="py-4 px-6 text-slate-500">Amazon Ind.</td>
+              <td class="py-4 px-6 text-center text-amber-500 tracking-tighter">★☆☆☆☆</td>
+              <td class="py-4 px-6 text-right"><span class="bg-rose-50 text-rose-700 text-xs font-bold px-2.5 py-1 rounded-full border border-rose-100">Negative</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50/40 transition-colors">
+              <td class="py-4 px-6 font-normal max-w-sm truncate text-slate-900">Phenomenal craft quality. Exceptionally fast shipping window.</td>
+              <td class="py-4 px-6 text-slate-500">Flipkart</td>
+              <td class="py-4 px-6 text-center text-amber-500 tracking-tighter">★★★★★</td>
+              <td class="py-4 px-6 text-right"><span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-100">Positive</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50/40 transition-colors">
+              <td class="py-4 px-6 font-normal max-w-sm truncate text-slate-900">Fulfillment delays ruined the presentation timeframe.</td>
+              <td class="py-4 px-6 text-slate-500">Myntra Marketplace</td>
+              <td class="py-4 px-6 text-center text-amber-500 tracking-tighter">★★☆☆☆</td>
+              <td class="py-4 px-6 text-right"><span class="bg-rose-50 text-rose-700 text-xs font-bold px-2.5 py-1 rounded-full border border-rose-100">Negative</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Refreshed Chart configuration using modern aesthetics -->
+<script>
+const ctx = document.getElementById('trend').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    datasets: [
+      {
+        label: 'Positive Sentiment',
+        data: [70, 74, 76, 78],
+        borderColor: '#059669',
+        backgroundColor: 'rgba(5, 150, 105, 0.04)',
+        tension: 0.35,
+        fill: true,
+        borderWidth: 2.5,
+        pointBackgroundColor: '#059669'
+      },
+      {
+        label: 'Negative Sentiment',
+        data: [30, 26, 24, 22],
+        borderColor: '#dc2626',
+        backgroundColor: 'rgba(220, 38, 38, 0.04)',
+        tension: 0.35,
+        fill: true,
+        borderWidth: 2.5,
+        pointBackgroundColor: '#dc2626'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { font: { family: 'Plus Jakarta Sans', weight: '500', size: 12 }, padding: 20 }
+      }
+    },
+    scales: {
+      y: {
+        grid: { color: 'rgba(0, 0, 0, 0.04)' },
+        ticks: { font: { family: 'Plus Jakarta Sans' }, callback: value => value + '%' }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { family: 'Plus Jakarta Sans' } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
